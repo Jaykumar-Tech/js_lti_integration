@@ -43,7 +43,7 @@ const setup = async () => {
   await lti.registerPlatform({
     url: "https://lmstest.lecturelogger.com",
     name: "lmstest.lecturelogger.com",
-    clientId: "10000000000006",
+    clientId: "6",
     authenticationEndpoint:
       "https://lmstest.lecturelogger.com/api/lti/authorize_redirect",
     accesstokenEndpoint: "https://lmstest.lecturelogger.com/login/oauth2/token",
