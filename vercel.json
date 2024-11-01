@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/grade", "dest": "/index.js" },
+    { "src": "/members", "dest": "/index.js" },
+    { "src": "/deeplink", "dest": "/index.js" },
+    { "src": "/resources", "dest": "/index.js" },
+    { "src": "/info", "dest": "/index.js" },
+    { "src": "/keys", "dest": "/index.js" },
+    { "src": "/login", "dest": "/index.js" },
+    { "src": "/register", "dest": "/index.js" },
+    { "src": "/(.*)", "dest": "/public/index.html" }
+  ]
+}
