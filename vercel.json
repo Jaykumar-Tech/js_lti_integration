@@ -12,6 +12,7 @@
     { "src": "/info", "dest": "index.js" },
     { "src": "/keys", "dest": "index.js" },
     { "src": "/login", "dest": "index.js" },
-    { "src": "/register", "dest": "index.js" }
+    { "src": "/register", "dest": "index.js" },
+    { "src": "/.*", "dest": "index.js" }
   ]
 }
