@@ -33,6 +33,17 @@ lti.onDeepLinking(async (token, req, res) => {
 // Setting up routes
 lti.app.use(routes);
 
+lti.app.get("/access_token", async (req, res) => {
+  try {
+    const platform = lti.getPlatform("https://lmstest.lecturelogger.com");
+    const accessToken = await platform.platformAccessToken();
+    return res.json({ access_token: accessToken });
+  } catch (error) {
+    console.error("Error getting access token:", error);
+    return res.status(500).json({ error: "Failed to retrieve access token" });
+  }
+});
+
 // Setup function
 const setup = async () => {
   await lti.deploy({ port: process.env.PORT });
@@ -43,7 +54,7 @@ const setup = async () => {
   await lti.registerPlatform({
     url: "https://lmstest.lecturelogger.com",
     name: "lmstest.lecturelogger.com",
-    clientId: "7",
+    clientId: "10000000000007",
     authenticationEndpoint:
       "https://lmstest.lecturelogger.com/api/lti/authorize_redirect",
     accesstokenEndpoint: "https://lmstest.lecturelogger.com/login/oauth2/token",
